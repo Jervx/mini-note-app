@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 
 import v1Route from "./api/v1";
-// import { errorHandlerMiddleware, notFoundMiddleware } from "./middlewares";
+import { errorHandlerMiddleware, notFoundMiddleware } from "./middlewares";
 
 const app = express();
 
@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 
 app.use("/api/v1", v1Route)
 
-// app.use(notFoundMiddleware)
-// app.use(errorHandlerMiddleware)
+app.use(notFoundMiddleware)
+app.use(errorHandlerMiddleware)
 
 export default app;
