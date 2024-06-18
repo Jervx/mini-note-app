@@ -9,7 +9,7 @@ import { errorHandlerMiddleware, notFoundMiddleware } from "./middlewares";
 const app = express();
 
 app.use(cookieParser())
-app.use(cors())
+app.use(cors({ origin : "*" }))
 app.use(bodyParser.json())
 
 app.use("/api/v1", v1Route)
